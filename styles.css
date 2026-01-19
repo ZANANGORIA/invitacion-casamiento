@@ -394,13 +394,13 @@ body {
 }
 
 .confirm-btn {
-    display: block;
-    margin: 0 auto;
+    display: inline-block;
     font-family: var(--font-sans);
     font-size: 1.125rem;
     font-weight: 500;
     letter-spacing: 2px;
     text-transform: uppercase;
+    text-decoration: none;
     color: var(--white);
     background: var(--gold);
     border: none;
@@ -418,6 +418,31 @@ body {
 
 .confirm-btn:active {
     transform: translateY(0);
+}
+
+/* ===== SECCIÓN 5: CONFIRMACIÓN DE ASISTENCIA ===== */
+.confirmation {
+    padding: 72px 24px;
+    background: var(--cream);
+    text-align: center;
+}
+
+.confirmation-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 16px;
+}
+
+.confirmation-text {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 300;
+    color: var(--gray);
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto 32px;
 }
 
 /* ===== SECCIÓN 5: CIERRE ===== */
