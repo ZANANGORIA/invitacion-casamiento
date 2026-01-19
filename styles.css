@@ -6,9 +6,9 @@
     --gold-light: #E8D5A3;
     --gold-dark: #9A7B3C;
     --charcoal: #2C2C2C;
-    --gray: #6B6B6B;
-    --gray-light: #A8A8A8;
-    
+    --gray: #5A5A5A;
+    --gray-light: #8A8A8A;
+
     --font-serif: 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'Montserrat', -apple-system, sans-serif;
 }
@@ -33,7 +33,7 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 720px;
     margin: 0 auto;
     padding: 0 24px;
 }
@@ -57,7 +57,7 @@ body {
     background: var(--gold);
     border-radius: 50%;
     opacity: 0;
-    animation: float 15s infinite;
+    animation: float 18s infinite;
 }
 
 @keyframes float {
@@ -65,26 +65,29 @@ body {
         opacity: 0;
         transform: translateY(100vh) rotate(0deg);
     }
+
     10% {
-        opacity: 0.6;
+        opacity: 0.5;
     }
+
     90% {
-        opacity: 0.6;
+        opacity: 0.5;
     }
+
     100% {
         opacity: 0;
         transform: translateY(-100vh) rotate(720deg);
     }
 }
 
-/* ===== HERO ===== */
+/* ===== SECCIÓN 1: HERO ===== */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 60px 24px;
+    padding: 48px 24px;
     position: relative;
     background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
 }
@@ -102,36 +105,27 @@ body {
 .hero-content {
     position: relative;
     z-index: 1;
+    max-width: 600px;
 }
 
-.pre-title {
-    font-family: var(--font-sans);
-    font-size: 0.875rem;
-    font-weight: 300;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--gray);
-    margin-bottom: 16px;
-    animation: fadeInDown 1s ease-out;
-}
-
-.title {
+.title-small {
     font-family: var(--font-serif);
-    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(1.25rem, 3.5vw, 1.75rem);
     font-weight: 400;
     color: var(--gray);
     margin-bottom: 8px;
-    animation: fadeInDown 1s ease-out 0.2s backwards;
+    letter-spacing: 1px;
+    animation: fadeInDown 1s ease-out;
 }
 
 .names {
     font-family: var(--font-serif);
-    font-size: clamp(3rem, 10vw, 5.5rem);
+    font-size: clamp(2.75rem, 10vw, 5rem);
     font-weight: 600;
     color: var(--charcoal);
     line-height: 1.1;
     margin-bottom: 32px;
-    animation: fadeInUp 1s ease-out 0.4s backwards;
+    animation: fadeInUp 1s ease-out 0.2s backwards;
 }
 
 .ampersand {
@@ -140,8 +134,7 @@ body {
     font-style: italic;
     font-weight: 400;
     color: var(--gold);
-    margin: 0 8px;
-    transform: scale(1.2);
+    margin: 0 4px;
 }
 
 .divider {
@@ -149,11 +142,12 @@ body {
     align-items: center;
     justify-content: center;
     gap: 16px;
-    animation: fadeIn 1s ease-out 0.6s backwards;
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease-out 0.4s backwards;
 }
 
 .line {
-    width: 60px;
+    width: 50px;
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--gold));
 }
@@ -164,8 +158,17 @@ body {
 
 .diamond {
     color: var(--gold);
-    font-size: 0.75rem;
-    animation: pulse 2s ease-in-out infinite;
+    font-size: 0.625rem;
+    animation: pulse 2.5s ease-in-out infinite;
+}
+
+.intro-text {
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    font-weight: 300;
+    color: var(--gray);
+    line-height: 1.9;
+    animation: fadeIn 1s ease-out 0.6s backwards;
 }
 
 @keyframes fadeInDown {
@@ -173,6 +176,7 @@ body {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -184,6 +188,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -191,96 +196,57 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.6; transform: scale(1.2); }
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.3);
+    }
 }
 
-/* ===== MESSAGE SECTION ===== */
-.message {
-    padding: 80px 24px;
-    background: var(--white);
-    text-align: center;
-    position: relative;
-}
-
-.message::before,
-.message::after {
-    content: '"';
-    position: absolute;
-    font-family: var(--font-serif);
-    font-size: 8rem;
-    color: var(--gold-light);
-    opacity: 0.3;
-    line-height: 1;
-}
-
-.message::before {
-    top: 40px;
-    left: 5%;
-}
-
-.message::after {
-    bottom: -20px;
-    right: 5%;
-    transform: rotate(180deg);
-}
-
-.quote {
-    font-family: var(--font-serif);
-    font-size: clamp(1.5rem, 4vw, 2rem);
-    font-weight: 600;
-    color: var(--charcoal);
-    margin-bottom: 24px;
-    position: relative;
-    z-index: 1;
-}
-
-.description {
-    font-family: var(--font-sans);
-    font-size: 1.125rem;
-    font-weight: 300;
-    color: var(--gray);
-    line-height: 1.8;
-    max-width: 600px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
-
-/* ===== EVENT INFO ===== */
+/* ===== SECCIÓN 2: INFORMACIÓN DEL EVENTO ===== */
 .event-info {
     padding: 80px 24px;
-    background: var(--cream);
+    background: var(--white);
 }
 
 .event-info .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
 }
 
 .event-card {
-    background: var(--white);
-    padding: 48px 32px;
+    background: var(--cream);
+    padding: 40px 28px;
     text-align: center;
     border-radius: 4px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-    border: 1px solid rgba(201, 169, 98, 0.1);
+    border: 1px solid rgba(201, 169, 98, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .event-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
 }
 
 .event-card .icon {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 16px;
 }
 
@@ -289,55 +255,76 @@ body {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--charcoal);
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
 }
 
 .event-card .venue {
     font-family: var(--font-sans);
-    font-size: 1rem;
+    font-size: 0.9375rem;
     font-weight: 500;
     color: var(--gold-dark);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .event-card .time {
     font-family: var(--font-sans);
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 400;
     color: var(--charcoal);
-    margin-bottom: 8px;
 }
 
 .event-card .note {
     font-family: var(--font-sans);
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     font-weight: 300;
     color: var(--gray-light);
-    font-style: italic;
     margin-top: 16px;
+    line-height: 1.5;
 }
 
-/* ===== TICKET ===== */
+/* ===== SECCIÓN 3: EXPERIENCIA ===== */
+.experience {
+    padding: 72px 24px;
+    background: var(--cream);
+    text-align: center;
+}
+
+.experience-text {
+    font-family: var(--font-serif);
+    font-size: clamp(1.25rem, 3.5vw, 1.625rem);
+    font-weight: 400;
+    color: var(--charcoal);
+    line-height: 1.8;
+    max-width: 580px;
+    margin: 0 auto;
+    font-style: italic;
+}
+
+/* ===== SECCIÓN 4: VALOR Y CONFIRMACIÓN ===== */
 .ticket {
-    padding: 60px 24px;
+    padding: 64px 24px;
     background: var(--white);
+    text-align: center;
 }
 
 .ticket-box {
-    text-align: center;
-    padding: 40px;
+    padding: 36px 32px;
     border: 2px solid var(--gold);
     border-radius: 4px;
     background: linear-gradient(135deg, var(--white) 0%, rgba(201, 169, 98, 0.03) 100%);
+    display: inline-block;
+    min-width: 240px;
     position: relative;
+    margin-bottom: 32px;
 }
 
 .ticket-box::before,
 .ticket-box::after {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     background: var(--white);
     border: 2px solid var(--gold);
     border-radius: 50%;
@@ -346,17 +333,17 @@ body {
 }
 
 .ticket-box::before {
-    left: -12px;
+    left: -11px;
 }
 
 .ticket-box::after {
-    right: -12px;
+    right: -11px;
 }
 
 .ticket-label {
     font-family: var(--font-sans);
-    font-size: 0.875rem;
-    font-weight: 400;
+    font-size: 0.75rem;
+    font-weight: 500;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--gray);
@@ -365,14 +352,39 @@ body {
 
 .ticket-price {
     font-family: var(--font-serif);
-    font-size: clamp(2rem, 6vw, 3rem);
+    font-size: clamp(2rem, 6vw, 2.75rem);
     font-weight: 600;
     color: var(--gold-dark);
 }
 
-/* ===== CLOSING ===== */
+.confirm-btn {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--gold);
+    border: none;
+    padding: 16px 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.confirm-btn:hover {
+    background: var(--gold-dark);
+    transform: translateY(-2px);
+}
+
+.confirm-btn:active {
+    transform: translateY(0);
+}
+
+/* ===== SECCIÓN 5: CIERRE ===== */
 .closing {
-    padding: 100px 24px;
+    padding: 80px 24px 100px;
     background: linear-gradient(180deg, var(--cream) 0%, var(--charcoal) 100%);
     text-align: center;
 }
@@ -380,7 +392,7 @@ body {
 .cta {
     font-family: var(--font-serif);
     font-size: clamp(1.5rem, 4vw, 2rem);
-    font-weight: 600;
+    font-weight: 500;
     color: var(--charcoal);
     margin-bottom: 8px;
 }
@@ -395,41 +407,58 @@ body {
 
 .signature {
     font-family: var(--font-serif);
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 600;
     color: var(--gold);
-    letter-spacing: 8px;
-    opacity: 0.9;
+    letter-spacing: 12px;
+    opacity: 0.85;
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
     .hero {
         padding: 40px 20px;
+        min-height: 100svh;
     }
-    
-    .message {
-        padding: 60px 20px;
+
+    .intro-text {
+        font-size: 0.9375rem;
+        line-height: 1.8;
     }
-    
-    .message::before,
-    .message::after {
-        font-size: 5rem;
-    }
-    
+
     .event-info {
         padding: 60px 20px;
     }
-    
+
     .event-card {
         padding: 32px 24px;
     }
-    
-    .ticket-box {
-        padding: 32px 20px;
+
+    .experience {
+        padding: 56px 20px;
     }
-    
+
+    .ticket {
+        padding: 48px 20px;
+    }
+
+    .ticket-box {
+        padding: 28px 24px;
+        min-width: 200px;
+    }
+
+    .confirm-btn {
+        padding: 14px 32px;
+        width: 100%;
+        max-width: 280px;
+    }
+
     .closing {
-        padding: 80px 20px;
+        padding: 64px 20px 80px;
+    }
+
+    .signature {
+        font-size: 2rem;
+        letter-spacing: 8px;
     }
 }
