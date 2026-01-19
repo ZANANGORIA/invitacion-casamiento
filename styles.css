@@ -312,65 +312,63 @@ body {
     font-style: italic;
 }
 
-/* ===== SECCIÓN 4: VALOR Y CONFIRMACIÓN ===== */
-.ticket {
-    padding: 64px 24px;
+/* ===== SECCIÓN 4: TARJETA DE PARTICIPACIÓN ===== */
+.participation {
+    padding: 72px 24px;
     background: var(--white);
     text-align: center;
 }
 
+.participation-content {
+    max-width: 520px;
+    margin: 0 auto 40px;
+}
+
+.participation-text {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 300;
+    color: var(--gray);
+    line-height: 1.9;
+    letter-spacing: 0.3px;
+}
+
+.participation-divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+    margin: 32px auto;
+}
+
 .ticket-box {
-    padding: 36px 32px;
-    border: 2px solid var(--gold);
+    padding: 32px 40px;
+    border: 1px solid var(--gold);
     border-radius: 4px;
-    background: linear-gradient(135deg, var(--white) 0%, rgba(201, 169, 98, 0.03) 100%);
+    background: linear-gradient(135deg, var(--white) 0%, rgba(201, 169, 98, 0.02) 100%);
     display: inline-block;
-    min-width: 240px;
-    position: relative;
-    margin-bottom: 32px;
-}
-
-.ticket-box::before,
-.ticket-box::after {
-    content: '';
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    background: var(--white);
-    border: 2px solid var(--gold);
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.ticket-box::before {
-    left: -11px;
-}
-
-.ticket-box::after {
-    right: -11px;
+    min-width: 220px;
 }
 
 .ticket-label {
     font-family: var(--font-sans);
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     font-weight: 500;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
-    color: var(--gray);
+    color: var(--gray-light);
     margin-bottom: 8px;
 }
 
 .ticket-price {
     font-family: var(--font-serif);
-    font-size: clamp(2rem, 6vw, 2.75rem);
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
     font-weight: 600;
     color: var(--gold-dark);
 }
 
 .confirm-btn {
     display: block;
-    margin: 40px auto 0;
+    margin: 0 auto;
     font-family: var(--font-sans);
     font-size: 1.125rem;
     font-weight: 500;
