@@ -358,19 +358,21 @@ body {
 }
 
 .confirm-btn {
-    display: inline-block;
+    display: block;
+    margin: 40px auto 0;
     font-family: var(--font-sans);
-    font-size: 0.875rem;
+    font-size: 1.125rem;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--white);
     background: var(--gold);
     border: none;
-    padding: 16px 40px;
+    padding: 22px 56px;
     border-radius: 4px;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 16px rgba(201, 169, 98, 0.3);
 }
 
 .confirm-btn:hover {
