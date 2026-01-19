@@ -162,6 +162,17 @@ body {
     animation: pulse 2.5s ease-in-out infinite;
 }
 
+.opening-text {
+    font-family: var(--font-serif);
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--charcoal);
+    margin-bottom: 32px;
+    letter-spacing: 0.5px;
+    animation: fadeIn 1s ease-out 0.5s backwards;
+}
+
 .intro-text {
     font-family: var(--font-sans);
     font-size: clamp(1rem, 2.5vw, 1.125rem);
