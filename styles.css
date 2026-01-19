@@ -294,6 +294,33 @@ body {
     line-height: 1.5;
 }
 
+.maps-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--gold-dark);
+    text-decoration: none;
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.maps-link:hover {
+    background: var(--gold);
+    color: var(--white);
+}
+
+.maps-icon {
+    font-size: 0.875rem;
+}
+
 /* ===== SECCIÓN 3: EXPERIENCIA ===== */
 .experience {
     padding: 72px 24px;
