@@ -11,6 +11,12 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Open Graph / WhatsApp Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Casamiento de Mayra & Gabriel">
+    <meta property="og:description" content="Acompañanos a celebrar nuestra unión.">
+    <meta property="og:image" content="fotos/foto1.jpg">
 </head>
 
 <body>
@@ -131,31 +137,48 @@
 
                 <div class="participation-divider"></div>
 
-                <div class="ticket-box">
-                    <p class="ticket-label">Valor de la tarjeta</p>
-                    <div class="ticket-prices">
-                        <div class="ticket-category">
-                            <span class="category-name">Adultos</span>
-                            <span class="category-price">$72.000</span>
+                <div class="participation-grid">
+                    <!-- Grupo 1: Valores -->
+                    <div class="ticket-box">
+                        <p class="ticket-label">Valor de la tarjeta</p>
+                        <div class="ticket-prices">
+                            <div class="ticket-category">
+                                <span class="category-name">Adultos</span>
+                                <span class="category-price">$72.000</span>
+                            </div>
+                            <div class="ticket-category">
+                                <span class="category-name">Niños de 3 a 9 años</span>
+                                <span class="category-price">$36.000</span>
+                            </div>
                         </div>
-                        <div class="ticket-category">
-                            <span class="category-name">Niños de 3 a 9 años</span>
-                            <span class="category-price">$36.000</span>
-                        </div>
+                        <p class="ticket-note-flexible">
+                            El valor de la tarjeta puede abonarse en una sola transferencia o en partes, en el momento
+                            que te resulte más cómodo.
+                        </p>
                     </div>
-                </div>
-                <p class="ticket-note">
-                    El valor de la tarjeta puede abonarse en una sola transferencia o en partes, en el momento que te
-                    resulte más cómodo.
-                </p>
 
-                <div class="qr-section">
-                    <p class="qr-intro">Para mayor comodidad, dejamos a continuación un código QR con los datos de la
-                        cuenta para realizar la transferencia.</p>
-                    <img src="fotos/qr-banco.png" alt="Código QR Transferencia" class="qr-img" loading="lazy">
-                    <div class="bank-details">
-                        <p class="bank-name">Banco Galicia</p>
-                        <p class="bank-alias">Alias: aguilera.gabriel22</p>
+                    <!-- Grupo 2: Datos de Pago -->
+                    <div class="payment-details-box">
+                        <p class="qr-intro">Datos para transferencia:</p>
+
+                        <div class="bank-info-highlight">
+                            <p class="bank-name">Banco Galicia</p>
+                            <button id="aliasBtn" class="alias-btn" aria-label="Copiar alias">
+                                <span class="alias-label">Alias:</span>
+                                <span class="alias-value">aguilera.gabriel22</span>
+                                <span class="copy-icon">📋</span>
+                            </button>
+                            <span id="copyFeedback" class="copy-feedback">¡Copiado!</span>
+                        </div>
+
+                        <div class="qr-wrapper">
+                            <img src="fotos/qr-banco.png" alt="Código QR Transferencia" class="qr-img" loading="lazy">
+                        </div>
+
+                        <p class="payment-deadline">
+                            Agradeceremos que la tarjeta esté abonada antes del 10 de septiembre para una mejor
+                            organización.
+                        </p>
                     </div>
                 </div>
             </div>
