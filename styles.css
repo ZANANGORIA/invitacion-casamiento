@@ -523,7 +523,41 @@ body {
     letter-spacing: 2.5px;
     text-transform: uppercase;
     color: var(--gray-light);
-    margin-bottom: 8px;
+    margin-bottom: 16px;
+}
+
+.ticket-prices {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ticket-category {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(201, 169, 98, 0.2);
+}
+
+.ticket-category:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.category-name {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--gray);
+}
+
+.category-price {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--gold-dark);
 }
 
 .ticket-price {
