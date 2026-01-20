@@ -131,10 +131,9 @@ body {
 .ampersand {
     display: inline-block;
     font-family: var(--font-serif);
-    font-style: italic;
     font-weight: 400;
     color: var(--gold);
-    margin: 0 4px;
+    margin: 0 8px;
 }
 
 .divider {
