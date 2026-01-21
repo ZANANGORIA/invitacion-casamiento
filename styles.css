@@ -354,11 +354,12 @@ body {
     z-index: 5;
 }
 
-/* Foto 8: vertical - centro abajo derecha */
+/* Foto 8: vertical - centro abajo */
 .gallery-item:nth-child(8) {
     width: 180px;
     top: 620px;
-    right: 20%;
+    left: 50%;
+    margin-left: -90px;
     transform: rotate(5deg);
     transition-delay: 1.26s;
     z-index: 7;
