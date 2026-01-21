@@ -224,18 +224,28 @@ function initCountdown() {
 }
 
 // ===== ANIMACIÓN GALERÍA =====
-function animateGallery() {
-    const galleryItems = document.querySelectorAll('.gallery-item');
+// ===== CARRUSEL AUTOMÁTICO =====
+function initCarousel() {
+    const slides = document.querySelectorAll('.carousel-slide');
+    if (!slides.length) return;
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1 });
+    let currentSlide = 0;
+    const intervalTime = 3000; // 3 segundos por set
 
-    galleryItems.forEach(item => observer.observe(item));
+    function nextSlide() {
+        // Retirar clase active del actual
+        slides[currentSlide].classList.remove('active');
+
+        // Calcular siguiente índice
+        currentSlide = (currentSlide + 1) % slides.length;
+
+        // Activar siguiente
+        slides[currentSlide].classList.add('active');
+    }
+
+    // Iniciar intervalo automático
+    // No guardamos el ID porque no lo detenemos (diseño "always active")
+    setInterval(nextSlide, intervalTime);
 }
 
 // ===== ANIMACIÓN AL SCROLL =====
@@ -337,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
     createParticles();
     animateParticles(performance.now());
     initCountdown();
-    animateGallery();
+    initCarousel();
     animateOnScroll();
     parallaxEffect();
     initCopyAlias();

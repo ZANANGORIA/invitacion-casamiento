@@ -249,154 +249,92 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* ===== SECCIÓN 3: GALERÍA / COLLAGE ===== */
-.gallery {
-    padding: 80px 24px 120px;
+/* ===== SECCIÓN 3: GALERÍA / CARRUSEL AUTO ===== */
+.gallery-carousel {
+    padding: 60px 0 100px;
     background: var(--cream);
-    overflow: visible;
+    overflow: hidden;
 }
 
-.gallery-grid {
+.carousel-container {
     position: relative;
     max-width: 900px;
-    min-height: 1050px;
-    margin: 0 auto;
-    padding: 60px 20px 40px;
-}
-
-.gallery-item {
-    position: absolute;
-    background: white;
-    padding: 12px;
-    padding-bottom: 40px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15),
-        0 2px 8px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transition: all 0.8s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    z-index: 1;
-}
-
-.gallery-item:hover {
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25),
-        0 4px 12px rgba(0, 0, 0, 0.15);
-    z-index: 10 !important;
-}
-
-.gallery-item.visible {
-    opacity: 1;
-}
-
-/* Posicionamiento y rotación de cada foto */
-.gallery-item:nth-child(1) {
-    width: 280px;
-    top: 40px;
-    left: 5%;
-    transform: rotate(-8deg);
-    transition-delay: 0s;
-    z-index: 3;
-}
-
-.gallery-item:nth-child(2) {
-    width: 260px;
-    top: 80px;
-    right: 8%;
-    transform: rotate(12deg);
-    transition-delay: 0.18s;
-    z-index: 4;
-}
-
-.gallery-item:nth-child(3) {
-    width: 300px;
-    top: 280px;
-    left: 15%;
-    transform: rotate(5deg);
-    transition-delay: 0.36s;
-    z-index: 2;
-}
-
-.gallery-item:nth-child(4) {
-    width: 270px;
-    top: 320px;
-    right: 12%;
-    transform: rotate(-10deg);
-    transition-delay: 0.54s;
-    z-index: 5;
-}
-
-.gallery-item:nth-child(5) {
-    width: 200px;
-    top: 180px;
-    left: 50%;
-    margin-left: -100px;
-    transform: rotate(-3deg);
-    transition-delay: 0.72s;
-    z-index: 6;
-}
-
-/* Foto 6: vertical - esquina izquierda abajo */
-.gallery-item:nth-child(6) {
-    width: 200px;
-    top: 480px;
-    left: 3%;
-    transform: rotate(7deg);
-    transition-delay: 0.9s;
-    z-index: 4;
-}
-
-/* Foto 7: vertical - derecha medio-bajo */
-.gallery-item:nth-child(7) {
-    width: 190px;
-    top: 520px;
-    right: 5%;
-    transform: rotate(-6deg);
-    transition-delay: 1.08s;
-    z-index: 5;
-}
-
-/* Foto 8: vertical - centro abajo */
-.gallery-item:nth-child(8) {
-    width: 180px;
-    top: 620px;
-    left: 50%;
-    margin-left: -90px;
-    transform: rotate(5deg);
-    transition-delay: 1.26s;
-    z-index: 7;
-}
-
-.gallery-item img {
     width: 100%;
-    height: auto;
+    margin: 0 auto;
+    height: 450px;
+    /* Altura fija para evitar saltos */
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    padding: 0 24px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.2s ease, transform 1.2s ease;
+    transform: scale(0.98);
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.slide-img-wrapper {
+    flex: 0 0 45%;
+    height: 400px;
+    position: relative;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 8px;
+    /* Marco blanco fino */
+}
+
+/* Leve rotación para mantener estilo */
+.slide-img-wrapper:nth-child(1) {
+    transform: rotate(-2deg);
+}
+
+.slide-img-wrapper:nth-child(2) {
+    transform: rotate(2deg);
+    margin-top: 40px;
+    /* Desplazamiento vertical para dinamismo */
+}
+
+.slide-img-wrapper img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
 
-/* Fotos verticales (5, 6, 7, 8): aspect-ratio 3/4 */
-.gallery-item:nth-child(5) img,
-.gallery-item:nth-child(6) img,
-.gallery-item:nth-child(7) img,
-.gallery-item:nth-child(8) img {
-    aspect-ratio: 3/4;
-}
-
-/* Versión móvil - mismo collage escalado */
 @media (max-width: 768px) {
-    .gallery {
-        padding: 40px 0 60px;
-        overflow: visible;
+    .carousel-container {
+        height: 320px;
     }
 
-    .gallery-grid {
-        min-height: 520px;
-        transform: scale(0.55);
-        transform-origin: top center;
-        margin-bottom: -280px;
+    .carousel-slide {
+        gap: 16px;
+        padding: 0 16px;
     }
 
-    .gallery-item {
-        padding: 8px;
-        padding-bottom: 24px;
+    .slide-img-wrapper {
+        flex: 0 0 48%;
+        /* Ocupan casi todo el ancho disponible */
+        height: 280px;
+        padding: 6px;
+    }
+
+    .slide-img-wrapper:nth-child(2) {
+        margin-top: 24px;
     }
 }
 
