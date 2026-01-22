@@ -370,18 +370,18 @@ function initCalendarBtn() {
             'STATUS:CONFIRMED',
             'SEQUENCE:0',
 
-            // Recordatorio 1: 1 Sep 2026 9:00 AM (Evento absoluto)
+            // Recordatorio 1: 1 Sep 2026 10:00 AM (Evento absoluto)
             'BEGIN:VALARM',
-            'TRIGGER;VALUE=DATE-TIME:20260901T090000',
+            'TRIGGER;VALUE=DATE-TIME:20260901T100000',
             'ACTION:DISPLAY',
-            'DESCRIPTION:Recordatorio Boda Mayra y Gabriel',
+            'DESCRIPTION:Después de muchos años compartidos, decidimos dar este paso y celebrarlo con quienes queremos.\\n\\nSi todavía no confirmaste tu asistencia o te quedó pendiente la tarjeta, podés hacerlo desde la invitación.',
             'END:VALARM',
 
-            // Recordatorio 2: 10 Oct 2026 9:00 AM (Evento absoluto)
+            // Recordatorio 2: 10 Oct 2026 10:00 AM (Evento absoluto)
             'BEGIN:VALARM',
-            'TRIGGER;VALUE=DATE-TIME:20261010T090000',
+            'TRIGGER;VALUE=DATE-TIME:20261010T100000',
             'ACTION:DISPLAY',
-            'DESCRIPTION:¡Hoy es el gran día! Casamiento Mayra y Gabriel',
+            'DESCRIPTION:Hoy celebramos.\\nGracias por ser parte de este día tan importante para nosotros.\\nNos vemos para compartir una noche inolvidable.',
             'END:VALARM',
 
             'END:VEVENT',
