@@ -823,6 +823,28 @@ body {
     font-style: italic;
 }
 
+/* ===== NUEVO: BOTÓN CALENDARIO ===== */
+.calendar-block {
+    margin-top: 56px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.calendar-note {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    /* Pequeño pero legible */
+    color: var(--gray-light);
+    font-weight: 300;
+    max-width: 300px;
+    margin: 0 auto;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
 /* ===== SECCIÓN 5: CIERRE ===== */
 .closing {
     padding: 80px 24px 100px;

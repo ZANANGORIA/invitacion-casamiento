@@ -330,15 +330,74 @@ function initCopyAlias() {
     });
 }
 
-// ===== AUTO-SHIMMER BOTÓN =====
+// ===== AUTO-SHIMMER BOTÓN (Solo confirmar) =====
 function autoShimmerButton() {
-    const btn = document.querySelector('.confirm-btn');
+    const btn = document.getElementById('confirmBtn'); // Solo el botón principal
     if (!btn) return;
 
     setInterval(() => {
         btn.classList.add('auto-shimmer');
         setTimeout(() => btn.classList.remove('auto-shimmer'), 1000);
     }, 9000);
+}
+
+// ===== BOTÓN AGENDAR CALENDARIO =====
+function initCalendarBtn() {
+    const btn = document.getElementById('calendarBtn');
+    if (!btn) return;
+
+    btn.addEventListener('click', () => {
+        const eventTitle = 'Casamiento de Mayra & Gabriel';
+        const eventDesc = 'Después de muchos años compartidos, decidimos dar este paso y celebrarlo con quienes queremos.\\n\\nSi todavía no confirmaste tu asistencia o te quedó pendiente la tarjeta, podés hacerlo desde la invitación.';
+        const eventLoc = 'Iglesia: [NOMBRE DE LA IGLESIA] - Salón: [NOMBRE DEL SALÓN]';
+
+        // Fecha: 10 de octubre 2026. Hora placeholder: 18:00
+        const start = '20261010T180000';
+        const end = '20261011T040000';
+
+        const icsLines = [
+            'BEGIN:VCALENDAR',
+            'VERSION:2.0',
+            'PRODID:-//Mayra Gabriel//Boda//ES',
+            'CALSCALE:GREGORIAN',
+            'METHOD:PUBLISH',
+            'BEGIN:VEVENT',
+            `SUMMARY:${eventTitle}`,
+            `DTSTART:${start}`,
+            `DTEND:${end}`,
+            `LOCATION:${eventLoc}`,
+            `DESCRIPTION:${eventDesc}`,
+            'STATUS:CONFIRMED',
+            'SEQUENCE:0',
+
+            // Recordatorio 1: 1 Sep 2026 9:00 AM (Evento absoluto)
+            'BEGIN:VALARM',
+            'TRIGGER;VALUE=DATE-TIME:20260901T090000',
+            'ACTION:DISPLAY',
+            'DESCRIPTION:Recordatorio Boda Mayra y Gabriel',
+            'END:VALARM',
+
+            // Recordatorio 2: 10 Oct 2026 9:00 AM (Evento absoluto)
+            'BEGIN:VALARM',
+            'TRIGGER;VALUE=DATE-TIME:20261010T090000',
+            'ACTION:DISPLAY',
+            'DESCRIPTION:¡Hoy es el gran día! Casamiento Mayra y Gabriel',
+            'END:VALARM',
+
+            'END:VEVENT',
+            'END:VCALENDAR'
+        ];
+
+        const icsContent = icsLines.join('\r\n');
+        const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'casamiento_mayra_gabriel.ics';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
 }
 
 // ===== INICIALIZAR =====
@@ -352,4 +411,5 @@ document.addEventListener('DOMContentLoaded', () => {
     parallaxEffect();
     initCopyAlias();
     autoShimmerButton();
+    initCalendarBtn();
 });
