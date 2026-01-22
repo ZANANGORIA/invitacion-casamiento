@@ -1,4 +1,4 @@
-// ===== SISTEMA DE PARTÍCULAS DINÁMICO =====
+﻿// ===== SISTEMA DE PARTÃCULAS DINÃMICO =====
 let particles = [];
 let scrollY = window.pageYOffset;
 let scrollVelocity = 0;
@@ -10,37 +10,37 @@ class Particle {
         this.element.className = 'particle';
         container.appendChild(this.element);
 
-        // Distribución totalmente orgánica en todo el documento
+        // DistribuciÃ³n totalmente orgÃ¡nica en todo el documento
         this.x = Math.random() * window.innerWidth;
         this.y = Math.random() * (document.body.scrollHeight + window.innerHeight);
 
-        // Velocidades con mucha variación para evitar sincronización
+        // Velocidades con mucha variaciÃ³n para evitar sincronizaciÃ³n
         this.velocityY = -(0.05 + Math.random() * 0.25); // Rango amplio
         this.velocityX = (Math.random() - 0.5) * 0.25; // Deriva variable
 
-        // Cada partícula tiene comportamiento único
-        this.scrollInfluence = 0.2 + Math.random() * 0.6; // Gran variación
-        this.velocityDamping = 0.96 + Math.random() * 0.04; // Fricción variable
+        // Cada partÃ­cula tiene comportamiento Ãºnico
+        this.scrollInfluence = 0.2 + Math.random() * 0.6; // Gran variaciÃ³n
+        this.velocityDamping = 0.96 + Math.random() * 0.04; // FricciÃ³n variable
 
-        // Delay temporal único para desfase
+        // Delay temporal Ãºnico para desfase
         this.updateDelay = Math.random() * 100; // 0-100ms de desfase
         this.lastUpdateTime = 0;
 
         // Propiedades visuales variadas
-        this.size = 3 + Math.random() * 4.5; // Tamaños más variados
+        this.size = 3 + Math.random() * 4.5; // TamaÃ±os mÃ¡s variados
         this.opacity = 0;
         this.targetOpacity = 0;
 
         // Twinkle desincronizado
         this.twinklePhase = Math.random() * Math.PI * 2;
-        this.twinkleSpeed = 0.008 + Math.random() * 0.022; // Más variación
+        this.twinkleSpeed = 0.008 + Math.random() * 0.022; // MÃ¡s variaciÃ³n
 
         this.element.style.width = this.size + 'px';
         this.element.style.height = this.size + 'px';
     }
 
     regenerate(currentScrollY, direction) {
-        // Regeneración totalmente aleatoria (no valores fijos)
+        // RegeneraciÃ³n totalmente aleatoria (no valores fijos)
         const randomOffset = 150 + Math.random() * 350; // Offset variable 150-500px
 
         if (direction === 'top') {
@@ -49,10 +49,10 @@ class Particle {
             this.y = currentScrollY - randomOffset;
         }
 
-        // Nueva posición X completamente aleatoria
+        // Nueva posiciÃ³n X completamente aleatoria
         this.x = Math.random() * window.innerWidth;
 
-        // Nuevas velocidades aleatorias en cada regeneración
+        // Nuevas velocidades aleatorias en cada regeneraciÃ³n
         this.velocityY = -(0.05 + Math.random() * 0.25);
         this.velocityX = (Math.random() - 0.5) * 0.25;
 
@@ -61,17 +61,17 @@ class Particle {
     }
 
     update(deltaTime, currentScrollY, scrollVel, currentTime) {
-        // Desfase temporal para evitar sincronización
+        // Desfase temporal para evitar sincronizaciÃ³n
         if (currentTime - this.lastUpdateTime < this.updateDelay) {
             return;
         }
         this.lastUpdateTime = currentTime;
 
-        // Influencia del scroll en velocidad con variación
+        // Influencia del scroll en velocidad con variaciÃ³n
         const scrollInfluenceY = scrollVel * this.scrollInfluence;
         this.velocityY += scrollInfluenceY * (0.01 + Math.random() * 0.01);
 
-        // Pequeñas turbulencias aleatorias para romper patrones
+        // PequeÃ±as turbulencias aleatorias para romper patrones
         this.velocityX += (Math.random() - 0.5) * 0.005;
         this.velocityY += (Math.random() - 0.5) * 0.003;
 
@@ -79,11 +79,11 @@ class Particle {
         this.y += this.velocityY * deltaTime * 0.06;
         this.x += this.velocityX * deltaTime * 0.06;
 
-        // Fricción variable
+        // FricciÃ³n variable
         this.velocityY *= this.velocityDamping;
         this.velocityX *= this.velocityDamping;
 
-        // Velocidad mínima flotante (con variación)
+        // Velocidad mÃ­nima flotante (con variaciÃ³n)
         if (Math.abs(this.velocityY) < 0.05) {
             this.velocityY = -(0.06 + Math.random() * 0.08);
         }
@@ -116,7 +116,7 @@ class Particle {
         this.twinklePhase += this.twinkleSpeed;
         const twinkleFactor = Math.sin(this.twinklePhase) * 0.3 + 0.7;
 
-        // Interpolación de opacidad
+        // InterpolaciÃ³n de opacidad
         this.opacity += (this.targetOpacity - this.opacity) * 0.06;
 
         // Renderizar
@@ -130,7 +130,7 @@ function createParticles() {
     const container = document.getElementById('particles');
     if (!container) return;
 
-    // Limpiar partículas existentes
+    // Limpiar partÃ­culas existentes
     container.innerHTML = '';
     particles = [];
 
@@ -140,7 +140,7 @@ function createParticles() {
     }
 }
 
-// Loop principal de animación
+// Loop principal de animaciÃ³n
 function animateParticles(currentTime) {
     const deltaTime = Math.min(currentTime - lastTime, 100);
     lastTime = currentTime;
@@ -152,7 +152,7 @@ function animateParticles(currentTime) {
     scrollVelocity += (scrollDelta - scrollVelocity) * 0.12;
     scrollY = currentScrollY;
 
-    // Actualizar cada partícula con currentTime
+    // Actualizar cada partÃ­cula con currentTime
     particles.forEach(particle => {
         particle.update(deltaTime, currentScrollY, scrollVelocity, currentTime);
     });
@@ -160,20 +160,20 @@ function animateParticles(currentTime) {
     requestAnimationFrame(animateParticles);
 }
 
-// Recrear al cambiar tamaño
+// Recrear al cambiar tamaÃ±o
 window.addEventListener('resize', () => {
     createParticles();
 });
 
 // ... existing code ...
 
-// ===== ESTILOS DINÁMICOS =====
+// ===== ESTILOS DINÃMICOS =====
 function addDynamicStyles() {
     const style = document.createElement('style');
     style.textContent = `
         .animate-on-scroll {
             opacity: 0.85; /* Casi visible desde el inicio */
-            transform: translateY(12px) scale(0.98); /* Recorrido más corto */
+            transform: translateY(12px) scale(0.98); /* Recorrido mÃ¡s corto */
             transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
             will-change: opacity, transform;
         }
@@ -223,8 +223,8 @@ function initCountdown() {
     setInterval(updateCountdown, 1000);
 }
 
-// ===== ANIMACIÓN GALERÍA =====
-// ===== CARRUSEL AUTOMÁTICO =====
+// ===== ANIMACIÃ“N GALERÃA =====
+// ===== CARRUSEL AUTOMÃTICO =====
 function initCarousel() {
     const slides = document.querySelectorAll('.carousel-slide');
     if (!slides.length) return;
@@ -236,19 +236,19 @@ function initCarousel() {
         // Retirar clase active del actual
         slides[currentSlide].classList.remove('active');
 
-        // Calcular siguiente índice
+        // Calcular siguiente Ã­ndice
         currentSlide = (currentSlide + 1) % slides.length;
 
         // Activar siguiente
         slides[currentSlide].classList.add('active');
     }
 
-    // Iniciar intervalo automático
-    // No guardamos el ID porque no lo detenemos (diseño "always active")
+    // Iniciar intervalo automÃ¡tico
+    // No guardamos el ID porque no lo detenemos (diseÃ±o "always active")
     setInterval(nextSlide, intervalTime);
 }
 
-// ===== ANIMACIÓN AL SCROLL =====
+// ===== ANIMACIÃ“N AL SCROLL =====
 function animateOnScroll() {
     const elements = document.querySelectorAll('.event-card, .ticket-box, .experience-text, .confirm-btn, .participation-content');
 
@@ -330,9 +330,9 @@ function initCopyAlias() {
     });
 }
 
-// ===== AUTO-SHIMMER BOTÓN (Solo confirmar) =====
+// ===== AUTO-SHIMMER BOTÃ“N (Solo confirmar) =====
 function autoShimmerButton() {
-    const btn = document.getElementById('confirmBtn'); // Solo el botón principal
+    const btn = document.getElementById('confirmBtn'); // Solo el botÃ³n principal
     if (!btn) return;
 
     setInterval(() => {
@@ -341,20 +341,12 @@ function autoShimmerButton() {
     }, 9000);
 }
 
-// ===== BOTÓN AGENDAR CALENDARIO =====
+// ===== BOTÃ“N AGENDAR CALENDARIO =====
 function initCalendarBtn() {
     const btn = document.getElementById('calendarBtn');
     if (!btn) return;
 
     btn.addEventListener('click', () => {
-        const eventTitle = 'Casamiento de Mayra & Gabriel';
-        const eventDesc = 'Después de muchos años compartidos, decidimos dar este paso y celebrarlo con quienes queremos.\\n\\nSi todavía no confirmaste tu asistencia o te quedó pendiente la tarjeta, podés hacerlo desde la invitación.';
-        const eventLoc = 'Iglesia: [NOMBRE DE LA IGLESIA] - Salón: [NOMBRE DEL SALÓN]';
-
-        // Fecha: 10 de octubre 2026. Hora placeholder: 18:00
-        const start = '20261010T180000';
-        const end = '20261011T040000';
-
         const icsLines = [
             'BEGIN:VCALENDAR',
             'VERSION:2.0',
@@ -362,28 +354,23 @@ function initCalendarBtn() {
             'CALSCALE:GREGORIAN',
             'METHOD:PUBLISH',
             'BEGIN:VEVENT',
-            `SUMMARY:${eventTitle}`,
-            `DTSTART:${start}`,
-            `DTEND:${end}`,
-            `LOCATION:${eventLoc}`,
-            `DESCRIPTION:${eventDesc}`,
+            'UID:recordatorio-sep@invitacion',
+            'SUMMARY:Recordatorio: Casamiento Mayra y Gabriel',
+            'DTSTART:20260901T100000',
+            'DTEND:20260901T110000',
+            'DESCRIPTION:Despues de muchos aÃ±os compartidos decidimos dar este paso. Si todavia no confirmaste tu asistencia podes hacerlo desde la invitacion.',
             'STATUS:CONFIRMED',
             'SEQUENCE:0',
-
-            // Recordatorio 1: 1 Sep 2026 10:00 AM (Evento absoluto)
-            'BEGIN:VALARM',
-            'TRIGGER;VALUE=DATE-TIME:20260901T100000',
-            'ACTION:DISPLAY',
-            'DESCRIPTION:Después de muchos años compartidos, decidimos dar este paso y celebrarlo con quienes queremos.\\n\\nSi todavía no confirmaste tu asistencia o te quedó pendiente la tarjeta, podés hacerlo desde la invitación.',
-            'END:VALARM',
-
-            // Recordatorio 2: 10 Oct 2026 10:00 AM (Evento absoluto)
-            'BEGIN:VALARM',
-            'TRIGGER;VALUE=DATE-TIME:20261010T100000',
-            'ACTION:DISPLAY',
-            'DESCRIPTION:Hoy celebramos.\\nGracias por ser parte de este día tan importante para nosotros.\\nNos vemos para compartir una noche inolvidable.',
-            'END:VALARM',
-
+            'END:VEVENT',
+            'BEGIN:VEVENT',
+            'UID:casamiento-oct@invitacion',
+            'SUMMARY:Casamiento de Mayra y Gabriel',
+            'DTSTART:20261010T100000',
+            'DTEND:20261011T040000',
+            'LOCATION:Iglesia y Salon',
+            'DESCRIPTION:Hoy celebramos. Gracias por ser parte de este dia tan importante. Nos vemos para compartir una noche inolvidable.',
+            'STATUS:CONFIRMED',
+            'SEQUENCE:0',
             'END:VEVENT',
             'END:VCALENDAR'
         ];
