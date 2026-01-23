@@ -347,41 +347,8 @@ function initCalendarBtn() {
     if (!btn) return;
 
     btn.addEventListener('click', () => {
-        const icsLines = [
-            'BEGIN:VCALENDAR',
-            'VERSION:2.0',
-            'PRODID:-//MayraGabriel//Boda//ES',
-            'CALSCALE:GREGORIAN',
-            'METHOD:PUBLISH',
-            'BEGIN:VEVENT',
-            'UID:recordatorio-sep-2026@invitacion',
-            'DTSTAMP:20260101T000000Z',
-            'SUMMARY:Recordatorio - Casamiento Mayra y Gabriel',
-            'DTSTART:20260901T110000',
-            'DTEND:20260901T113000',
-            'DESCRIPTION:Despues de muchos años compartidos decidimos dar este paso. Si todavia no confirmaste tu asistencia podes hacerlo desde la invitacion.',
-            'STATUS:CONFIRMED',
-            'TRANSP:TRANSPARENT',
-            'END:VEVENT',
-            'BEGIN:VEVENT',
-            'UID:casamiento-oct-2026@invitacion',
-            'DTSTAMP:20260101T000000Z',
-            'SUMMARY:Casamiento de Mayra y Gabriel',
-            'DTSTART:20261010T110000',
-            'DTEND:20261010T113000',
-            'LOCATION:Iglesia y Salon',
-            'DESCRIPTION:Hoy celebramos. Gracias por ser parte de este dia tan importante. Nos vemos para compartir una noche inolvidable.',
-            'STATUS:CONFIRMED',
-            'TRANSP:TRANSPARENT',
-            'END:VEVENT',
-            'END:VCALENDAR'
-        ];
-
-        const icsContent = icsLines.join('\r\n');
-        const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-
         const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
+        link.href = 'casamiento_mayra_gabriel.ics';
         link.download = 'casamiento_mayra_gabriel.ics';
         document.body.appendChild(link);
         link.click();
