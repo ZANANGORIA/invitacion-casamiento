@@ -24,18 +24,33 @@
 </head>
 
 <body>
-    <!-- Partículas doradas decorativas -->
+    <!-- Detalles decorativos -->
     <div class="particles" id="particles"></div>
+    <svg class="icon-sprite" aria-hidden="true">
+        <symbol id="icon-photo" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="9" cy="10" r="1.5"/><path d="m6 17 4-4 3 3 2-2 3 3"/></symbol>
+        <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a3.5 3.5 0 0 1 6.2-2.2L12 9l.8-1.2A3.5 3.5 0 0 1 19 10c0 5.6-7 10-7 10Z"/></symbol>
+        <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M12 8v4l2.8 1.8"/></symbol>
+        <symbol id="icon-bell" viewBox="0 0 24 24"><path d="M6 17h12l-1.5-2.2V10a4.5 4.5 0 0 0-9 0v4.8L6 17Z"/><path d="M10 20h4"/></symbol>
+        <symbol id="icon-court" viewBox="0 0 24 24"><path d="M4 9h16L12 4 4 9ZM6 10v7M10 10v7M14 10v7M18 10v7M4 20h16"/></symbol>
+        <symbol id="icon-pool" viewBox="0 0 24 24"><path d="M3 14c2 2 4 2 6 0 2 2 4 2 6 0 2 2 4 2 6 0M3 18c2 2 4 2 6 0 2 2 4 2 6 0 2 2 4 2 6 0"/><path d="M8 11V5h8v6"/></symbol>
+        <symbol id="icon-drink" viewBox="0 0 24 24"><path d="m7 4 2 8v6h6v-6l2-8H7ZM12 4V2M12 18v3"/></symbol>
+        <symbol id="icon-music" viewBox="0 0 24 24"><path d="M9 18V7l9-2v11"/><circle cx="6" cy="18" r="2"/><circle cx="15" cy="16" r="2"/></symbol>
+        <symbol id="icon-card" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 15h3"/></symbol>
+        <symbol id="icon-gift" viewBox="0 0 24 24"><path d="M4 10h16v10H4zM3 7h18v3H3zM12 7v13M12 7H8.5a2 2 0 1 1 2-3.3L12 7Zm0 0h3.5a2 2 0 1 0-2-3.3L12 7Z"/></symbol>
+        <symbol id="icon-list" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M8 9h8M8 13h5M8 17h6"/></symbol>
+        <symbol id="icon-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="m8.5 12 2.3 2.3 4.8-5"/></symbol>
+        <symbol id="icon-toast" viewBox="0 0 24 24"><path d="M7 4h4l-1 8H8L7 4Zm6 0h4l-1 8h-2l-1-8ZM9 12v5M15 12v5M6 20h12"/></symbol>
+    </svg>
 
     <!-- ========== SECCIÓN 1: HERO / PORTADA ========== -->
     <header class="hero">
         <div class="hero-content">
-            <h1 class="title-small">Casamiento de</h1>
+            <h1 class="title-small">Casamiento</h1>
             <h2 class="names">Mayra <span class="ampersand">&</span> Gabriel</h2>
 
             <div class="divider">
                 <span class="line"></span>
-                <span class="diamond">◆</span>
+                <span class="diamond">●</span>
                 <span class="line"></span>
             </div>
 
@@ -53,6 +68,9 @@
 
     <!-- ========== SECCIÓN 2: GALERÍA / COLLAGE ========== -->
     <section class="gallery-carousel">
+        <svg class="section-detail detail-gallery" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h3l1.4-2h7.2L17 7h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1Z"/><circle cx="12" cy="13" r="3.5"/></svg>
+        <svg class="section-detail section-detail--secondary detail-gallery-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a3.5 3.5 0 0 1 6.2-2.2L12 9l.8-1.2A3.5 3.5 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg>
+        <svg class="section-detail section-detail--extra detail-extra-left-top" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-photo"/></svg><svg class="section-detail section-detail--extra detail-extra-left-bottom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-heart"/></svg><svg class="section-detail section-detail--extra detail-extra-right-top" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-heart"/></svg><svg class="section-detail section-detail--extra detail-extra-right-bottom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-photo"/></svg>
         <div class="carousel-container" id="carousel">
             <!-- Set 1 -->
             <div class="carousel-slide active">
@@ -79,6 +97,9 @@
 
     <!-- ========== SECCIÓN 3: CUENTA REGRESIVA ========== -->
     <section class="countdown-section">
+        <svg class="section-detail detail-countdown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/><path d="M9 14h2M13 14h2M9 17h2"/></svg>
+        <svg class="section-detail section-detail--secondary detail-countdown-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="7"/><path d="M12 8v4l2.8 1.8"/></svg>
+        <svg class="section-detail section-detail--extra detail-extra-left-top" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-bell"/></svg><svg class="section-detail section-detail--extra detail-extra-left-bottom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-clock"/></svg><svg class="section-detail section-detail--extra detail-extra-right-top" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-clock"/></svg><svg class="section-detail section-detail--extra detail-extra-right-bottom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-bell"/></svg>
         <div class="container">
             <p class="countdown-date">Viernes 25 de diciembre de 2026</p>
             <h3 class="countdown-title">Faltan</h3>
@@ -111,6 +132,9 @@
 
     <!-- ========== SECCIÓN 4: INFORMACIÓN DEL EVENTO ========== -->
     <section class="event-info">
+        <svg class="section-detail detail-event" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s6-5.2 6-11a6 6 0 1 0-12 0c0 5.8 6 11 6 11Z"/><circle cx="12" cy="10" r="2"/></svg>
+        <svg class="section-detail section-detail--secondary detail-event-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12a8 8 0 0 1 16 0H4Z"/><path d="M12 12v6a3 3 0 0 0 5 2"/><path d="M8 12 6 7M12 12V4M16 12l2-5"/></svg>
+        <svg class="section-detail section-detail--extra detail-extra-left-top" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-court"/></svg><svg class="section-detail section-detail--extra detail-extra-left-bottom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-pool"/></svg><svg class="section-detail section-detail--extra detail-extra-right-top" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-pool"/></svg><svg class="section-detail section-detail--extra detail-extra-right-bottom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-court"/></svg>
         <div class="container">
             <div class="event-card">
                 <div class="icon">🏛️</div>
@@ -140,6 +164,9 @@
 
     <!-- ========== SECCIÓN 5: LO QUE SE VIENE (EXPERIENCIA) ========== -->
     <section class="experience">
+        <svg class="section-detail detail-experience" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg>
+        <svg class="section-detail section-detail--secondary detail-experience-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 18V7l9-2v11"/><circle cx="6" cy="18" r="2"/><circle cx="15" cy="16" r="2"/></svg>
+        <svg class="section-detail section-detail--extra detail-extra-left-top" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-drink"/></svg><svg class="section-detail section-detail--extra detail-extra-left-bottom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-music"/></svg><svg class="section-detail section-detail--extra detail-extra-right-top" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-pool"/></svg><svg class="section-detail section-detail--extra detail-extra-right-bottom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-drink"/></svg>
         <div class="container">
             <p class="experience-text">
                 Vamos a pasar el calor en la pileta, brindar con buenos tragos
@@ -151,6 +178,9 @@
 
     <!-- ========== SECCIÓN 6: TARJETA DE PARTICIPACIÓN ========== -->
     <section class="participation">
+        <svg class="section-detail detail-gifts" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 10h16v10H4zM3 7h18v3H3zM12 7v13M12 7H8.5a2 2 0 1 1 2-3.3L12 7Zm0 0h3.5a2 2 0 1 0-2-3.3L12 7Z"/></svg>
+        <svg class="section-detail section-detail--secondary detail-gifts-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a3.5 3.5 0 0 1 6.2-2.2L12 9l.8-1.2A3.5 3.5 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg>
+        <svg class="section-detail section-detail--extra detail-extra-left-top" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-card"/></svg><svg class="section-detail section-detail--extra detail-extra-left-bottom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-gift"/></svg><svg class="section-detail section-detail--extra detail-extra-right-top" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-heart"/></svg><svg class="section-detail section-detail--extra detail-extra-right-bottom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-card"/></svg>
         <div class="container">
             <div class="participation-content">
                 <h3 class="participation-title">Regalos</h3>
@@ -160,7 +190,7 @@
                     Si aun así les nace hacernos un regalo, pueden dejarnos una colaboración voluntaria para los gastos
                     de la celebración.<br>
                     Pero de verdad: su presencia es el mejor regalo.<br><br>
-                    <span class="participation-joke">P. D.: toda colaboración participa automáticamente por un premio especial. 😄</span>
+                    <span class="participation-joke">P. D.: toda colaboración participa automáticamente por un premio especial. 😄😂🎉</span>
                 </p>
 
                 <div class="participation-divider"></div>
@@ -192,6 +222,9 @@
 
     <!-- ========== SECCIÓN 7: CONFIRMACIÓN DE ASISTENCIA ========== -->
     <section class="confirmation">
+        <svg class="section-detail detail-confirmation" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="m8.5 12 2.3 2.3 4.8-5"/></svg>
+        <svg class="section-detail section-detail--secondary detail-confirmation-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M8 9h8M8 13h5M8 17h6"/></svg>
+        <svg class="section-detail section-detail--extra detail-extra-left-top" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-list"/></svg><svg class="section-detail section-detail--extra detail-extra-left-bottom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-bell"/></svg><svg class="section-detail section-detail--extra detail-extra-right-top" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-check"/></svg><svg class="section-detail section-detail--extra detail-extra-right-bottom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-list"/></svg>
         <div class="container">
             <h3 class="confirmation-title">Confirmación de asistencia</h3>
             <p class="confirmation-text">
@@ -207,6 +240,9 @@
 
     <!-- ========== SECCIÓN 8: CIERRE ========== -->
     <footer class="closing">
+        <svg class="section-detail detail-closing" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 4v16M4 12h16M6.3 6.3l11.4 11.4M17.7 6.3 6.3 17.7"/><circle cx="12" cy="12" r="3"/></svg>
+        <svg class="section-detail section-detail--secondary detail-closing-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m12 4 .8 4.2L17 9l-4.2.8L12 14l-.8-4.2L7 9l4.2-.8L12 4Z"/><path d="m18 15 .5 2.5L21 18l-2.5.5L18 21l-.5-2.5L15 18l2.5-.5L18 15Z"/></svg>
+        <svg class="section-detail section-detail--extra detail-extra-left-top" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-toast"/></svg><svg class="section-detail section-detail--extra detail-extra-left-bottom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-heart"/></svg><svg class="section-detail section-detail--extra detail-extra-right-top" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-music"/></svg><svg class="section-detail section-detail--extra detail-extra-right-bottom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#icon-toast"/></svg>
         <div class="container">
             <p class="cta">Vení con ganas de festejar.</p>
             <p class="tagline">Del resto, nos encargamos nosotros.</p>
