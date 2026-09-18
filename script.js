@@ -134,7 +134,7 @@ function createParticles() {
     container.innerHTML = '';
     particles = [];
 
-    const particleCount = window.innerWidth <= 768 ? 45 : 90;
+    const particleCount = window.innerWidth <= 768 ? 25 : 90;
     for (let i = 0; i < particleCount; i++) {
         particles.push(new Particle(container));
     }
