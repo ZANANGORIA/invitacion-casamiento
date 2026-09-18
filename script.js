@@ -187,7 +187,7 @@ function addDynamicStyles() {
 
 // ===== CUENTA REGRESIVA =====
 function initCountdown() {
-    const targetDate = new Date('2026-10-10T00:00:00').getTime();
+    const targetDate = new Date('2026-12-25T12:00:00').getTime();
 
     const daysEl = document.getElementById('days');
     const hoursEl = document.getElementById('hours');
@@ -297,36 +297,38 @@ function parallaxEffect() {
 
 // ===== COPIAR ALIAS =====
 function initCopyAlias() {
-    const aliasBtn = document.getElementById('aliasBtn');
+    const aliasButtons = document.querySelectorAll('[data-alias]');
     const feedback = document.getElementById('copyFeedback');
 
-    if (!aliasBtn || !feedback) return;
+    if (!aliasButtons.length || !feedback) return;
 
-    aliasBtn.addEventListener('click', async () => {
-        const aliasText = 'aguilera.gabriel22';
+    const showFeedback = () => {
+        feedback.classList.add('show');
+        setTimeout(() => {
+            feedback.classList.remove('show');
+        }, 2000);
+    };
 
-        try {
-            await navigator.clipboard.writeText(aliasText);
+    aliasButtons.forEach((button) => {
+        button.addEventListener('click', async () => {
+            const aliasText = button.dataset.alias;
 
-            feedback.classList.add('show');
-            setTimeout(() => {
-                feedback.classList.remove('show');
-            }, 2000);
+            try {
+                await navigator.clipboard.writeText(aliasText);
+                showFeedback();
 
-        } catch (err) {
-            console.error('Error al copiar:', err);
-            const textArea = document.createElement("textarea");
-            textArea.value = aliasText;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand("copy");
-            document.body.removeChild(textArea);
+            } catch (err) {
+                console.error('Error al copiar:', err);
+                const textArea = document.createElement("textarea");
+                textArea.value = aliasText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand("copy");
+                document.body.removeChild(textArea);
 
-            feedback.classList.add('show');
-            setTimeout(() => {
-                feedback.classList.remove('show');
-            }, 2000);
-        }
+                showFeedback();
+            }
+        });
     });
 }
 

@@ -443,8 +443,16 @@ body {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--charcoal);
-    margin-bottom: 20px;
+    margin-bottom: 6px;
     letter-spacing: 0.5px;
+}
+
+.event-card .event-detail {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--gold-dark);
+    margin-bottom: 18px;
 }
 
 .event-card .venue {
@@ -523,14 +531,23 @@ body {
 
 /* ===== SECCIÓN 4: TARJETA DE PARTICIPACIÓN ===== */
 .participation {
-    padding: 72px 24px;
+    padding: 56px 24px 40px;
     background: var(--white);
     text-align: center;
 }
 
 .participation-content {
     max-width: 520px;
-    margin: 0 auto 40px;
+    margin: 0 auto;
+}
+
+.participation-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 16px;
+    text-align: center;
 }
 
 .participation-text {
@@ -632,8 +649,18 @@ body {
 
 .payment-details-box {
     text-align: center;
-    padding-top: 24px;
+    padding-top: 16px;
     border-top: 1px solid rgba(201, 169, 98, 0.2);
+}
+
+.qr-intro {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--gold-dark);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
 }
 
 .ticket-note-flexible {
@@ -659,11 +686,15 @@ body {
 
 /* Alias Interactivo */
 .bank-info-highlight {
-    margin-bottom: 24px;
+    margin-bottom: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
+}
+
+.alias-bank-name {
+    margin-top: 12px;
 }
 
 .alias-btn {
@@ -794,6 +825,10 @@ body {
     padding: 72px 24px;
     background: var(--cream);
     text-align: center;
+}
+
+.participation-joke {
+    font-style: italic;
 }
 
 .confirmation-title {

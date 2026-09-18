@@ -4,24 +4,35 @@ PRODID:-//MayraGabriel//Boda//ES
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
-UID:recordatorio-sep-2026@invitacion
-DTSTAMP:20260101T000000Z
-SUMMARY:Recordatorio - Casamiento Mayra y Gabriel
-DTSTART:20260901T110000
-DTEND:20260901T113000
-DESCRIPTION:Despues de muchos años compartidos decidimos dar este paso. Si todavia no confirmaste tu asistencia podes hacerlo desde la invitacion.
+UID:recordatorio-casamiento-2026@invitacion
+DTSTAMP:20260918T000000Z
+SUMMARY:En una semana nos casamos
+DTSTART:20261218T100000
+DTEND:20261218T101500
+DESCRIPTION:No te olvides del protector solar: se viene pileta\, comida y casamiento. También es el último día para confirmar asistencia. Si todavía no lo hiciste\, completá el formulario: https://forms.gle/uNFX6EkcoJfUTkPUA
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:casamiento-oct-2026@invitacion
-DTSTAMP:20260101T000000Z
-SUMMARY:Casamiento de Mayra y Gabriel
-DTSTART:20261010T110000
-DTEND:20261010T113000
-LOCATION:Iglesia y Salon
-DESCRIPTION:Hoy celebramos. Gracias por ser parte de este dia tan importante. Nos vemos para compartir una noche inolvidable.
+UID:civil-mayra-gabriel-2026@invitacion
+DTSTAMP:20260918T000000Z
+SUMMARY:Civil de Mayra y Gabriel
+DTSTART;VALUE=DATE:20261223
+DTEND;VALUE=DATE:20261224
+LOCATION:Lugar a confirmar
+DESCRIPTION:Civil de Mayra y Gabriel. Lugar y horario a confirmar.
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:casamiento-diciembre-2026@invitacion
+DTSTAMP:20260918T000000Z
+SUMMARY:Casamiento de Mayra y Gabriel
+DTSTART:20261225T120000
+DTEND:20261225T200000
+LOCATION:Lugar a confirmar
+DESCRIPTION:Vení a pasar el día con nosotros: pileta\, comida\, música y brindis. Lugar a confirmar.
+STATUS:CONFIRMED
+TRANSP:OPAQUE
 END:VEVENT
 END:VCALENDAR
