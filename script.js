@@ -332,17 +332,6 @@ function initCopyAlias() {
     });
 }
 
-// ===== AUTO-SHIMMER BOTÃ“N (Solo confirmar) =====
-function autoShimmerButton() {
-    const btn = document.getElementById('confirmBtn'); // Solo el botÃ³n principal
-    if (!btn) return;
-
-    setInterval(() => {
-        btn.classList.add('auto-shimmer');
-        setTimeout(() => btn.classList.remove('auto-shimmer'), 1000);
-    }, 9000);
-}
-
 // ===== BOTÃ“N AGENDAR CALENDARIO =====
 function initCalendarBtn() {
     const btn = document.getElementById('calendarBtn');
@@ -368,6 +357,5 @@ document.addEventListener('DOMContentLoaded', () => {
     animateOnScroll();
     parallaxEffect();
     initCopyAlias();
-    autoShimmerButton();
     initCalendarBtn();
 });

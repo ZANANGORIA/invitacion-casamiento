@@ -2283,3 +2283,38 @@ body {
     .detail-extra-right-top { right: 6vw; top: 11%; }
     .detail-extra-right-bottom { right: 8vw; top: 85%; }
 }
+
+/* Llamadas a la acción principales: visibles y limpias. */
+#calendarBtn,
+#confirmBtn {
+    border: 2px solid rgba(255, 255, 255, 0.72);
+    box-shadow: none;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    min-width: 270px;
+    animation: none;
+}
+
+#calendarBtn:hover,
+#confirmBtn:hover {
+    box-shadow: none;
+}
+
+#calendarBtn::after,
+#confirmBtn::after {
+    left: -150%;
+    transition: none;
+    animation: action-button-shine 2.8s ease-in-out infinite;
+}
+
+@keyframes action-button-shine {
+    from { left: -150%; }
+    to { left: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #calendarBtn,
+    #confirmBtn,
+    #calendarBtn::after,
+    #confirmBtn::after { animation: none; }
+}
