@@ -14,18 +14,6 @@ STATUS:CONFIRMED
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:civil-mayra-gabriel-2026@invitacion
-DTSTAMP:20260918T000000Z
-SUMMARY:Civil de Mayra y Gabriel
-DTSTART;VALUE=DATE:20261223
-DTEND;VALUE=DATE:20261224
-LOCATION:Italia 5409\, Chacras de Coria\, Luján de Cuyo
-DESCRIPTION:Civil de Mayra y Gabriel. Italia 5409\, Chacras de Coria\, Luján de Cuyo.
-URL:https://maps.app.goo.gl/NgzEcpXFRUmNCJjX7
-STATUS:CONFIRMED
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
 UID:recordatorio-civil-mayra-gabriel-2026@invitacion
 DTSTAMP:20260918T000000Z
 SUMMARY:Mañana es el civil de Mayra y Gabriel
@@ -35,18 +23,6 @@ DESCRIPTION:Te esperamos mañana para acompañarnos en el civil. Italia 5409\, C
 URL:https://maps.app.goo.gl/NgzEcpXFRUmNCJjX7
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:casamiento-diciembre-2026@invitacion
-DTSTAMP:20260918T000000Z
-SUMMARY:Casamiento de Mayra y Gabriel
-DTSTART:20261225T120000
-DTEND:20261225T200000
-LOCATION:Salón El Chañar\, Las Compuertas\, Luján de Cuyo
-DESCRIPTION:Vení a pasar el día con nosotros: pileta\, comida\, música y brindis. Salón El Chañar\, Las Compuertas\, Luján de Cuyo.
-URL:https://maps.app.goo.gl/gQU4ADwisuDBpye76
-STATUS:CONFIRMED
-TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:recordatorio-celebracion-mayra-gabriel-2026@invitacion
