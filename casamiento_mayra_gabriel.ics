@@ -6,32 +6,34 @@ METHOD:PUBLISH
 BEGIN:VEVENT
 UID:recordatorio-casamiento-2026@invitacion
 DTSTAMP:20260918T000000Z
-SUMMARY:En una semana nos casamos
+SUMMARY:☀️ En una semana: ¡nos casamos!
 DTSTART:20261218T100000
 DTEND:20261218T101500
-DESCRIPTION:No te olvides del protector solar: se viene pileta\, comida y casamiento. También es el último día para confirmar asistencia. Si todavía no lo hiciste\, completá el formulario: https://forms.gle/uNFX6EkcoJfUTkPUA
+DESCRIPTION:En una semana nos casamos. ☀️\nNo te olvides del protector solar: se viene pileta\, comida y casamiento.\nHoy es el último día para confirmar asistencia: https://forms.gle/uNFX6EkcoJfUTkPUA
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:recordatorio-civil-mayra-gabriel-2026@invitacion
 DTSTAMP:20260918T000000Z
-SUMMARY:Mañana es el civil de Mayra y Gabriel
+SUMMARY:🏛️ Mañana: civil de Mayra y Gabriel
 DTSTART:20261222T100000
 DTEND:20261222T101500
-DESCRIPTION:Te esperamos mañana para acompañarnos en el civil. Italia 5409\, Chacras de Coria\, Luján de Cuyo.
-URL:https://maps.app.goo.gl/NgzEcpXFRUmNCJjX7
+LOCATION:San Martín 198-120\, Luján de Cuyo
+DESCRIPTION:Mañana nos casamos por civil.\n📍 San Martín 198-120\, Luján de Cuyo\nAbrir ubicación: https://maps.app.goo.gl/z4hkRpfiVvj8f55a6
+URL:https://maps.app.goo.gl/z4hkRpfiVvj8f55a6
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:recordatorio-celebracion-mayra-gabriel-2026@invitacion
 DTSTAMP:20260918T000000Z
-SUMMARY:Mañana celebramos nuestro casamiento
+SUMMARY:🏊 Mañana: ¡nos juntamos a festejar!
 DTSTART:20261224T100000
 DTEND:20261224T101500
-DESCRIPTION:Mañana nos encontramos para celebrar. No te olvides del protector solar. Salón El Chañar\, Las Compuertas\, Luján de Cuyo.
-URL:https://maps.app.goo.gl/gQU4ADwisuDBpye76
+LOCATION:Salón El Chañar\, Las Compuertas\, Luján de Cuyo
+DESCRIPTION:Mañana nos encontramos para celebrar.\nNo te olvides del protector solar.\n📍 Salón El Chañar\, Las Compuertas\, Luján de Cuyo\nAbrir ubicación: https://maps.app.goo.gl/ZfFYKD27GB8F67Rv5
+URL:https://maps.app.goo.gl/ZfFYKD27GB8F67Rv5
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
 END:VEVENT
