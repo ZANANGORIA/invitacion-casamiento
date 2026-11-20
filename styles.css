@@ -2318,3 +2318,30 @@ body {
     #calendarBtn::after,
     #confirmBtn::after { animation: none; }
 }
+
+/* Lista de información práctica */
+.practical-list {
+    list-style: none;
+    margin: 18px 0 4px;
+    padding: 16px 0 0;
+    border-top: 1px solid rgba(99, 112, 82, 0.18);
+    text-align: center;
+}
+
+.practical-list li {
+    color: var(--charcoal);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.55;
+    margin: 0 0 8px;
+}
+
+.practical-list li:last-child {
+    margin-bottom: 0;
+}
+
+.practical-list strong {
+    color: var(--gold-dark);
+    font-weight: 600;
+}
