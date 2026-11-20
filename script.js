@@ -161,7 +161,11 @@ function animateParticles(currentTime) {
 }
 
 // Recrear al cambiar tamaÃ±o
+// Solo si cambia el ancho: en el celular el alto cambia al mostrarse/ocultarse la barra del navegador
+let lastParticlesWidth = window.innerWidth;
 window.addEventListener('resize', () => {
+    if (window.innerWidth === lastParticlesWidth) return;
+    lastParticlesWidth = window.innerWidth;
     createParticles();
 });
 
@@ -281,10 +285,11 @@ function parallaxEffect() {
 
                 if (scrolled < heroHeight) {
                     const rate = scrolled * 0.6;
-                    const blur = Math.min(scrolled / 100, 3);
+                    // Sin desenfoque en celular: es pesado en equipos de gama baja
+                    const blur = window.innerWidth <= 768 ? 0 : Math.min(scrolled / 100, 3);
                     heroContent.style.transform = `translateY(${rate}px)`;
                     heroContent.style.opacity = 1 - (scrolled / heroHeight) * 0.85;
-                    heroContent.style.filter = `blur(${blur}px)`;
+                    heroContent.style.filter = blur ? `blur(${blur}px)` : 'none';
                 }
                 ticking = false;
             });
@@ -303,6 +308,9 @@ function initCopyAlias() {
     if (!aliasButtons.length || !feedback) return;
 
     const showFeedback = () => {
+        // Se vacía y se vuelve a escribir para que los lectores de pantalla lo anuncien cada vez
+        feedback.textContent = '';
+        setTimeout(() => { feedback.textContent = '¡Copiado!'; }, 50);
         feedback.classList.add('show');
         setTimeout(() => {
             feedback.classList.remove('show');
