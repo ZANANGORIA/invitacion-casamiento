@@ -359,3 +359,38 @@ document.addEventListener('DOMContentLoaded', () => {
     initCopyAlias();
     initCalendarBtn();
 });
+
+
+// Botón flotante "Confirmar asistencia" (solo celular): aparece al pasar la portada
+// y se oculta al llegar a la sección de confirmación o si la persona lo cierra.
+(function () {
+    const box = document.getElementById('floatingConfirm');
+    const closeBtn = document.getElementById('floatingConfirmClose');
+    const hero = document.querySelector('.hero');
+    const confirmation = document.querySelector('.confirmation');
+    if (!box || !hero || !confirmation || !('IntersectionObserver' in window)) return;
+
+    let pastHero = false;
+    let atConfirmation = false;
+    let dismissed = false;
+    try { dismissed = sessionStorage.getItem('floatingConfirmDismissed') === '1'; } catch (e) { }
+
+    const update = () => box.classList.toggle('is-visible', pastHero && !atConfirmation && !dismissed);
+
+    new IntersectionObserver((entries) => {
+        pastHero = entries[0].intersectionRatio < 0.3;
+        update();
+    }, { threshold: [0, 0.3] }).observe(hero);
+
+    new IntersectionObserver((entries) => {
+        const e = entries[0];
+        atConfirmation = e.isIntersecting || e.boundingClientRect.top < 0;
+        update();
+    }, { threshold: [0] }).observe(confirmation);
+
+    closeBtn.addEventListener('click', () => {
+        dismissed = true;
+        try { sessionStorage.setItem('floatingConfirmDismissed', '1'); } catch (e) { }
+        update();
+    });
+})();

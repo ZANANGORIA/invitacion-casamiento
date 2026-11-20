@@ -2345,3 +2345,198 @@ body {
     color: var(--gold-dark);
     font-weight: 600;
 }
+
+/* Portada: todo el contenido entra en una sola pantalla (se ajusta al alto de la ventana) */
+.hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: clamp(20px, 5vh, 48px) 20px;
+}
+
+.hero-content .title-small {
+    font-size: clamp(1.6rem, min(3.8vw, 5vh), 2.35rem);
+    margin-bottom: 0;
+}
+
+.hero-content .names {
+    font-size: clamp(2.15rem, min(8.2vw, 13vh), 6rem);
+    margin-bottom: clamp(12px, 3vh, 32px);
+}
+
+.hero-content .divider {
+    margin-bottom: clamp(16px, 4vh, 40px);
+}
+
+.hero-content .opening-text {
+    font-size: clamp(1.2rem, min(2.4vw, 3.9vh), 1.7rem);
+    line-height: 1.6;
+    margin-bottom: clamp(14px, 3.5vh, 32px);
+    padding: clamp(0.8rem, 2.4vh, 1.15rem) clamp(1.25rem, 3vw, 2rem);
+}
+
+.hero-content .intro-text {
+    font-size: clamp(1rem, min(2.5vw, 3vh), 1.125rem);
+    line-height: 1.75;
+}
+
+/* Iconos de actividades debajo del texto de "Lo que se viene" */
+.experience-icons {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px clamp(18px, 4vw, 44px);
+    justify-content: center;
+    list-style: none;
+    margin: 36px auto 0;
+    max-width: 640px;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.experience-icons li {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 64px;
+}
+
+.experience-icons svg {
+    color: var(--leaf);
+    height: 44px;
+    width: 44px;
+}
+
+.experience-icons span {
+    color: var(--charcoal);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+}
+.experience-text {
+    text-wrap: balance;
+}
+
+/* Evita palabras sueltas al final de cada renglón en el texto de regalos */
+.participation-text,
+.participation-joke {
+    text-wrap: balance;
+}
+
+/* Más ancho para que el texto de regalos se reparta en renglones parejos */
+.participation-content {
+    max-width: 780px;
+}
+
+/* Regalos: espacios más compactos para que la sección entre en una pantalla */
+.participation {
+    padding-top: clamp(24px, 4vh, 48px);
+    padding-bottom: clamp(20px, 3vh, 36px);
+}
+
+.participation-title {
+    margin-bottom: 8px;
+}
+
+.participation-text {
+    line-height: 1.6;
+}
+
+.participation-joke {
+    display: block;
+    margin-top: 10px;
+}
+
+.participation-divider {
+    margin-top: clamp(14px, 2.5vh, 28px);
+    margin-bottom: clamp(14px, 2.5vh, 28px);
+}
+
+.payment-details-box {
+    padding-top: 4px;
+}
+
+.qr-intro {
+    margin-bottom: 8px;
+}
+
+.alias-btn {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.alias-bank-name {
+    margin-top: 4px;
+}
+/* Confirmación: la fecha límite se lee sin esfuerzo */
+.confirmation-deadline {
+    color: var(--charcoal);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+/* Botón flotante de confirmación: solo celular, chico y descartable */
+.floating-confirm {
+    align-items: center;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    display: none;
+    gap: 4px;
+    left: 50%;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    transform: translate(-50%, 16px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    visibility: hidden;
+    z-index: 50;
+}
+
+.floating-confirm.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+    visibility: visible;
+}
+
+.floating-confirm-link {
+    background: var(--leaf);
+    border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(63, 74, 61, 0.28);
+    color: var(--white);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 12px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.floating-confirm-close {
+    background: rgba(255, 253, 249, 0.92);
+    border: 1px solid rgba(63, 74, 61, 0.2);
+    border-radius: 50%;
+    color: var(--charcoal);
+    cursor: pointer;
+    font-size: 1.1rem;
+    height: 32px;
+    line-height: 1;
+    padding: 0;
+    width: 32px;
+}
+
+@media (max-width: 768px) {
+    .floating-confirm {
+        display: flex;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .floating-confirm {
+        transition: none;
+    }
+}
