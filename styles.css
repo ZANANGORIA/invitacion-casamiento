@@ -2540,3 +2540,94 @@ body {
         transition: none;
     }
 }
+
+/* ===== Revisión UI: contraste, botón flotante, íconos y decoración ===== */
+
+/* Contador y fecha: contraste legible sobre el fondo beige */
+.countdown-section .countdown-number { color: #7A5C1E; }
+.countdown-section .countdown-label,
+.countdown-section .countdown-title,
+.countdown-section .countdown-date { color: var(--charcoal); }
+
+/* Portada: texto secundario y separador con mejor contraste */
+.hero-content .intro-text { color: #4A5748; }
+.hero-content .divider .diamond { color: #8F7342; }
+
+/* Íconos de línea en lugar de emojis */
+.event-card .icon { color: var(--leaf); }
+.event-card .icon svg { height: 30px; width: 30px; }
+.maps-icon svg,
+.copy-icon svg { height: 1.15em; vertical-align: -0.2em; width: 1.15em; }
+
+/* Zonas táctiles de al menos 44 px */
+.alias-btn { min-height: 44px; }
+.floating-confirm-close { position: relative; }
+.floating-confirm-close::after { content: ""; inset: -6px; position: absolute; }
+
+/* El botón flotante ya no pisa el texto: degradado detrás y aire al final */
+.floating-confirm::before {
+    background: linear-gradient(to bottom, rgba(246, 240, 229, 0), var(--cream) 70%);
+    bottom: calc(-12px - env(safe-area-inset-bottom, 0px));
+    content: "";
+    height: 88px;
+    left: 50%;
+    pointer-events: none;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 100vw;
+    z-index: -1;
+}
+
+.particles { overflow: hidden; }
+
+@media (max-width: 768px) {
+    body { padding-bottom: 80px; }
+    /* Menos decoración en celular */
+    .section-detail--secondary { display: none; }
+    .section-detail { opacity: 0.3; }
+}
+
+/* Textos de apoyo con contraste suficiente */
+.countdown-section .calendar-note,
+.confirmation .confirmation-text { color: #4A5748; }
+
+/* ===== Retoques finales: jerarquía, lectura en celular y contraste del pie ===== */
+
+/* Qué llevar / Con chicos / Estacionamiento: etiqueta arriba, dato abajo */
+.practical-list li { margin-bottom: 14px; }
+.practical-list li:last-child { margin-bottom: 0; }
+.practical-list strong {
+    color: #7A5C1E;
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+}
+
+/* Pie: fondo más profundo para que el texto claro se lea bien */
+.closing { background-color: #55744F; }
+.closing .signature { color: #F3DC9A; opacity: 1; }
+
+/* Textos largos: alineados a la izquierda en celular (los títulos siguen centrados) */
+@media (max-width: 600px) {
+    .experience-text,
+    .participation-text {
+        text-align: left;
+        text-wrap: pretty;
+    }
+    .experience-text { font-size: 1.3rem; line-height: 1.5; }
+}
+
+/* Botones verdes: texto claro con contraste AA (5,2:1) */
+#confirmBtn,
+#calendarBtn,
+.floating-confirm-link { background-color: #55744F; }
+
+/* Foco de teclado visible en cualquier fondo */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #3F4A3D;
+    outline-offset: 3px;
+}
